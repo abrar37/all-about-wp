@@ -113,6 +113,8 @@ function six_open_jobs(){
         }
         $slug = str_replace([" ", "/", ".", "&", "(", ")"], "-", $job['Job_Opening_Name']);
         $url = 'https://jobs.tkxel.com/jobs/Careers/'. $job['id'] . '/' .$slug .'?source=CareerSite';
+        $job_location = (!empty($job['City']) && !empty($job['Country'])) ? $job['City'] . ', ' . $job['Country'] : 'N/A';
+
         $cards .= '<div class="job-card">
             <a href='. $url .'>
                 <div class="job-title">
@@ -120,7 +122,7 @@ function six_open_jobs(){
                     <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M-0.00134087 5.25095C-0.00134087 5.44986 0.0776768 5.64063 0.218328 5.78128C0.358981 5.92193 0.549747 6.00095 0.748659 6.00095H9.43816L6.21766 9.21995C6.14793 9.28968 6.09261 9.37246 6.05487 9.46357C6.01714 9.55468 5.99771 9.65233 5.99771 9.75095C5.99771 9.84956 6.01714 9.94721 6.05487 10.0383C6.09261 10.1294 6.14793 10.2122 6.21766 10.2819C6.28739 10.3517 6.37017 10.407 6.46128 10.4447C6.55239 10.4825 6.65004 10.5019 6.74866 10.5019C6.84728 10.5019 6.94493 10.4825 7.03603 10.4447C7.12714 10.407 7.20993 10.3517 7.27966 10.2819L11.7797 5.78195C11.8495 5.71228 11.9049 5.62951 11.9427 5.5384C11.9805 5.44728 12 5.3496 12 5.25095C12 5.1523 11.9805 5.05461 11.9427 4.9635C11.9049 4.87238 11.8495 4.78962 11.7797 4.71995L7.27966 0.219948C7.13883 0.0791176 6.94782 0 6.74866 0C6.5495 0 6.35849 0.0791176 6.21766 0.219948C6.07683 0.360777 5.99771 0.551784 5.99771 0.750948C5.99771 0.950111 6.07683 1.14112 6.21766 1.28195L9.43816 4.50095H0.748659C0.549747 4.50095 0.358981 4.57997 0.218328 4.72062C0.0776768 4.86127 -0.00134087 5.05203 -0.00134087 5.25095Z" fill="#2569E6"></path></svg>
                 </div>
                 <div class="job-location">
-                    <p>'. $job['City'] .', '. $job['Country'] .'</p>
+                    <p>'. $job_location .'</p>
                 </div>
             </a>
         </div>';
@@ -165,6 +167,7 @@ function all_open_jobs() {
           $matching_jobs_count++;
           $slug = str_replace([" ", "/", ".", "&", "(", ")"], "-", $job['Job_Opening_Name']);
           $url = 'https://jobs.tkxel.com/jobs/Careers/' . $job['id'] . '/' . $slug . '?source=CareerSite';
+          $job_location = (!empty($job['City']) && !empty($job['Country'])) ? $job['City'] . ', ' . $job['Country'] : 'N/A';
 
           $cards .= '<div class="job-card">
               <a href="' . $url . '">
@@ -174,7 +177,7 @@ function all_open_jobs() {
                   </div>
                   <div class="job-location">
                   
-                      <p>' . $job['City'] . ', ' . $job['Country'] . '</p>
+                      <p>' . $job_location . '</p>
                   </div>
               </a>
           </div>';
