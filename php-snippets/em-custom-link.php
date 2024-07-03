@@ -1,3 +1,5 @@
+<?php
+
 // Custom Link on Elementor blog loop grid
 
 function ed_blog_link($atts) {
@@ -17,5 +19,10 @@ function ed_blog_link($atts) {
     return $link;
 }
 add_shortcode('ed_blog_link', 'ed_blog_link');
+
+
+
+
+?>
 
 

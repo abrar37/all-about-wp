@@ -1,0 +1,171 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+
+/* Jobs Search Form */
+.job-search-from{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 4px;    
+    overflow: hidden;
+}
+.job-search-from input:focus-visible, .job-search-from select:focus-visible{
+    outline: none;
+}
+
+.job-search-from div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.job-search-from input{
+    border: none !important;
+    padding: 0px !important;
+}
+.job-search-from select{
+    border: none;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.job-search-from .search-field-wrp{
+    width: 40%;
+    padding: 18px 16px;
+    border: solid #e1e6ee;
+    border-width: 1px 0 1px 1px;
+}
+
+.job-search-from .cat-dropdown-wrp{
+    width: 25%;
+    padding: 18px 16px;
+    border: solid #e1e6ee;
+    border-width: 1px 0 1px 1px;
+}
+
+.job-search-from .loc-dropdown-wrp{
+    width: 25%;
+    padding: 18px 16px;
+    border: solid #e1e6ee;
+    border-width: 1px 0 1px 1px;
+}
+.job-search-from .search-btn-wrp{
+    width: 10%;
+}
+.job-search-from .search-btn-wrp button{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: 0;
+}
+
+/* Jobs Card CSS */
+.jobs-cards-wrp{
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* min-height: 520px; */
+}
+.job-card{
+    border: 1px solid #d7dbe3;
+    padding: 32px;
+    min-height: 150px;
+    height: 100%;
+    border-radius: 4px;
+}
+.job-card .job-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.job-title h6{
+    margin: 0 0 12px 0;
+    color: #212529;
+    width: 90%
+}
+.job-card .job-location p{
+    color: #6c6c6c !important;
+}
+.job-card:hover{
+    background-color: #2569e6;
+    transition: all .3s ease-in-out;
+}
+.job-card:hover h6, .job-card:hover .job-location p{
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+.job-card:hover .job-location p{
+    color: #fff !important;
+    transition: all .3s ease-in-out;
+}
+.job-card:hover .job-title svg{
+    transform: translateX(10px);
+    transition: all .3s ease-in-out;
+}
+.job-card:hover .job-title svg path{
+    fill: #fff;
+    transition: all .3s ease-in-out;
+}
+.job-pagination{
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+    padding-top: 48px;
+}
+.job-pagination button{
+    padding: 0 !important;
+    border: none !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+.job-pagination button:disabled{
+    opacity: 0.3;
+}
+.job-pagination span{
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 2px;
+    margin: 0 5px;
+}
+.job-pagination span.active{
+    background-color: #2569e6;
+    color: #fff;   
+}
+
+
+@media only screen and (max-width: 1024px){
+    .job-search-from .search-field-wrp{
+        width: 100%;
+        border-width: 1px 1px 0 1px;
+    }
+    .job-search-from .cat-dropdown-wrp{
+        width: 50%;
+        border-width: 1px 1px 0 1px;
+    }
+    .job-search-from .loc-dropdown-wrp{
+        width: 50%;
+    }
+    .job-search-from .search-btn-wrp{
+        width: 100%;
+        height: 62px;
+    }
+    .jobs-cards-wrp{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .job-search-from div{
+        width: 100% !important;
+    }
+    .jobs-cards-wrp{
+        grid-template-columns: 1fr;
+    }
+    .job-card {
+        padding: 24px;
+    }
+}
