@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://https://tkxel.com/
+ * @link              https://gravatar.com/khabrar37
  * @since             1.0.0
  * @package           Tkxel_Jobs_Board
  *
  * @wordpress-plugin
  * Plugin Name:       Tkxel Jobs Board
- * Plugin URI:        https://tkxel.com/
+ * Plugin URI:        https://gravatar.com/khabrar37
  * Description:       Fetches and displays job openings from the Zoho API by TKXEL. Shortcodes: [job_search_form], [total_jobs_num], [six_open_jobs], [all_open_jobs] 
  * Version:           1.0.0
  * Author:            Abrar A.
- * Author URI:        https://tkxel.com/
+ * Author URI:        https://gravatar.com/khabrar37
  * Text Domain:       tkxel-jobs-board
  */
 
