@@ -14,7 +14,12 @@ class Tkxel_Jobs_Board_API {
             return 'No job openings found.';
         }
         
-        return $jobs_data['data']['data'];
+        $open_jobs = array_filter( $jobs_data['data']['data'], function ( $item ) {
+            return isset( $item['Job_Opening_Status'] ) && $item['Job_Opening_Status'] === "In-progress";
+        } );
+
+        // print_r($open_jobs);
+
+        return $open_jobs;
     }
 }
-
